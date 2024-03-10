@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://kp57go0824vw"]
+
+[ext_resource type="Script" path="res://Characters/wordBox.gd" id="1_ekbpu"]
+[ext_resource type="FontFile" uid="uid://dwf6ukkopt1g8" path="res://GILB____.TTF" id="1_f8emx"]
+[ext_resource type="Script" path="res://Characters/RichTextLabel.gd" id="3_3un71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6dig"]
+size = Vector2(353, 52)
+
+[node name="wordBox" type="Area2D" groups=["words"]]
+script = ExtResource("1_ekbpu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(175.5, 32)
+shape = SubResource("RectangleShape2D_r6dig")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_children = 2
+offset_left = 2.0
+offset_right = 290.0
+offset_bottom = 74.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/normal_font = ExtResource("1_f8emx")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "placeholder"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("3_3un71")

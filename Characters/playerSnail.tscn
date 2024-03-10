@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://botf00b4m3mw7"]
+
+[ext_resource type="Script" path="res://Characters/playerSnail.gd" id="1_l4c0n"]
+[ext_resource type="Texture2D" uid="uid://bpthuvrga0xk0" path="res://Lworm.png" id="2_o0jcv"]
+
+[sub_resource type="GDScript" id="GDScript_yffvm"]
+script/source = "extends RayCast2D
+"
+
+[node name="playerSnail" type="CharacterBody2D"]
+position = Vector2(20, 16)
+script = ExtResource("1_l4c0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(175, 175)
+scale = Vector2(6.46875, 6.46875)
+texture = ExtResource("2_o0jcv")
+flip_h = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(229, 240)
+exclude_parent = false
+target_position = Vector2(5350, 0)
+collide_with_areas = true
+script = SubResource("GDScript_yffvm")
